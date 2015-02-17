@@ -1,0 +1,5 @@
+function spikesTemp = GetSPIKESrandom(spikes, ID, n)
+
+idx = any(ID == n);
+        
+

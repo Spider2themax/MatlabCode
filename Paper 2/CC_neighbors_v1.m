@@ -1,0 +1,40 @@
+function [tDiff] = CC_neighbors_v1(s, N)
+
+%{ 
+    This program will consider the spike trains of N neurons in a neural
+    network connected according to the connectivity matrix, con.  We will
+    use Dijkstra's algorithm to determine what the neighbor distance is
+    between all neurons.  After this, we will calculate the correlation
+    coefficient between all neural spike trains.
+
+    Max Henderson
+    Drexel University
+    11/18/13
+%}
+
+%% Calculate all to all spike differences.
+spikes = reshape(s, N, N);
+tDiff = zeros(2,1);
+count = 1;
+doneIn = 1;
+doneOut = 1;
+time1 = 1;
+time2 = 1;
+for neuron1 = 1 : N - 1,
+    for neuron2 = neuron1 : N,
+        for time1 = 1 : N,
+            for time2 = 1 : N,
+                while doneIn == 1,
+                    if (spikes(time2, neuron2)) == 0,
+                        tDiff(count) = abs(spikes(time1, neuron1) - (spikes(time2, neuron2)));
+                        count = count + 1;
+                    else
+                        doneIn = 0;
+                    end
+                end
+            end
+        end
+    end
+end
+
+hist(tDiff, 250);

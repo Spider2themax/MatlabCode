@@ -1,0 +1,95 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (safepoint.cpp:555), pid=9201, tid=89828208
+#  Error: Deadlock in safepoint code.  Should have called back to the VM before blocking.
+#
+# JRE version: 6.0_17-b04
+# Java VM: Java HotSpot(TM) Client VM (14.3-b01 mixed mode linux-x86 )
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0xb6485800):  JavaThread "main" [_thread_in_native_trans, id=9243, stack(0x04daa000,0x055ab000)]
+
+Stack: [0x04daa000,0x055ab000],  sp=0x055a1390,  free space=8156k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0x3fb71a]
+V  [libjvm.so+0x191d6c]
+V  [libjvm.so+0x35fa80]
+V  [libjvm.so+0x3cc3ce]
+V  [libjvm.so+0x21fba5]
+C  [libmwjmi.so+0x1aa07]  _ZN22mljLocalReferenceFrameC1EP7JNIEnv_i+0x21
+C  [libnativecmdwin.so+0xc864]  _ZN22JavaCmdWinStreamBuffer8privsyncEb+0x80
+C  [libnativecmdwin.so+0xca1e]  _ZN22JavaCmdWinStreamBuffer8overflowEi+0x32
+C  [libstdc++.so.6+0x8faf2]  _ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci+0x42
+C  [libmwservices.so+0x54837]
+C  [libmwservices.so+0x54b18]
+C  [libstdc++.so.6+0x8faf2]  _ZNSt15basic_streambufIcSt11char_traitsIcEE6xsputnEPKci+0x42
+C  [libstdc++.so.6+0x85bf1]  _ZNSo5writeEPKci+0x51
+C  [libmwmcr.so+0x59988]
+C  [libmwmcr.so+0x59b9d]
+C  [libmwmcr.so+0x5b15f]
+C  [+0x40c]  __kernel_rt_sigreturn+0x0
+C  [libmwjmi.so+0x1dcb0]  _Z19mljCallObjectMethodP8_jobjectP10_jmethodIDz+0x55
+C  [libuij.so+0x2e607]  _Z20UIJ_GetContainerRectP10WinRec_tagP6mwrect+0x71
+C  [libmwhg.so+0x2159e2]  gf_PixelPosition+0x9a
+C  [libmwhg.so+0x1d1e57]  get_axis_PixelPosition+0x52
+C  [libmwhg.so+0x1f1ca7]
+C  [libmwhg.so+0x1d1957]
+C  [libmwhg.so+0x2b11d5]
+C  [libmwhg.so+0x290bb9]
+C  [libmwhg.so+0x292f3e]
+C  [libmwhg.so+0x2933f9]
+C  [libmwhg.so+0x2ce2d6]
+C  [libmwhg.so+0x213264]
+C  [libmwhg.so+0x213095]
+C  [libmwhg.so+0x213095]
+C  [libmwhg.so+0x219e40]
+C  [libmwhg.so+0x21a6bf]
+C  [libmwgui.so+0x7d6eb]  _Z18wm_ButtonmotionFcnP10WinRec_tagPv+0x66
+C  [libuij.so+0x129f7]
+C  [libuij.so+0x2a8b3]
+C  [libmwudd.so+0x6c416]
+C  [libmwudd.so+0x6c91d]  _ZN21UDListenerManagerHost11notifyEventEP16UDDatabaseClientPK13UDEventSourcePK11UDEventInfoP7UDEvent+0x55
+C  [libmwudd.so+0x6335c]  _ZN11UDEventInfo4sendEP16UDDatabaseClientP11UDInterfaceP7UDEvent+0x5c
+C  [libmwudd.so+0x6513c]  _ZN11UDInterface4sendEP16UDDatabaseClientP11UDEventInfoP7UDEvent+0x82
+C  [libmwudd_mi.so+0x1ed03]
+C  [libmwuix.so+0x5ffbf]
+C  [libmwuix.so+0x59026]
+C  [libmwuix.so+0x59367]  _Z17UIX_DispatchEventP7_XEvent+0x1f
+C  [libmwuix.so+0x68156]
+C  [libmwuix.so+0x684d0]
+C  [libmwservices.so+0x67920]  ioGetChar+0x86
+C  [libmwbridge.so+0x12b75]
+C  [libmwbridge.so+0x12c80]
+C  [libmwbridge.so+0x13224]
+C  [libmwbridge.so+0x135e1]  _Z10ioReadLinebP8_IO_FILEPcS1_iPbRKN5boost8optionalIKP15inWorkSpace_tagEEb+0x84
+C  [libmwbridge.so+0x13726]
+C  [libmwbridge.so+0x17056]
+C  [libmwbridge.so+0x17227]
+C  [libmwbridge.so+0x17845]  mnParser+0x24b
+C  [libmwmcr.so+0x43471]  _ZN11mcrInstance30mnParser_on_interpreter_threadEv+0x33
+C  [libmwmcr.so+0x4966b]
+C  [libmwmcr.so+0x24652]
+C  [libmwmcr.so+0x246e3]
+C  [libmwuix.so+0x5ffbf]
+C  [libmwuix.so+0x59026]
+C  [libmwuix.so+0x59367]  _Z17UIX_DispatchEventP7_XEvent+0x1f
+C  [libmwuix.so+0x68156]
+C  [libmwuix.so+0x62ce9]
+C  [libuij.so+0x38d19]  _ZSt8for_eachIN9__gnu_cxx17__normal_iteratorIPN5boost8weak_ptrIN4sysq10ws_ppeHookEEESt6vectorIS6_SaIS6_EEEENS4_6wait_FIS6_NS2_10shared_ptrIS5_EEEEET0_T_SH_SG_+0x3a
+C  [libuij.so+0x394d7]
+C  [libuij.so+0x3481b]  _Z25svWS_ProcessPendingEventsiib+0x2cf
+C  [libuij.so+0x37dad]  _Z27UIJ_WS_ProcessPendingEventsii+0x2c
+C  [libmwservices.so+0x66d78]  svWS_ProcessPendingEvents+0x25
+C  [libmwmcr.so+0x2595d]
+C  [libmwmcr.so+0x25ec4]
+C  [libmwmcr.so+0x26067]
+C  [libpthread.so.0+0x5cc9]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+J  com.mathworks.jmi.bean.UDDObject.directGetPropertyFromMatlab(JJ)[Ljava/lang/Object;
+C  0x5f206330
